@@ -26,7 +26,7 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package com.impossibl.postgis.system.procs;
+package fc.pgjdbcng.jts;
 
 import com.impossibl.postgres.system.Context;
 import com.impossibl.postgres.system.procs.BinaryDecoder;
