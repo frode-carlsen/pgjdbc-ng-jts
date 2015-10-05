@@ -36,6 +36,9 @@ import com.impossibl.postgres.system.procs.TextDecoder;
 import com.impossibl.postgres.system.procs.TextEncoder;
 import com.impossibl.postgres.types.PrimitiveType;
 import com.impossibl.postgres.types.Type;
+
+import java.io.IOException;
+
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKBReader;
@@ -43,8 +46,6 @@ import com.vividsolutions.jts.io.WKBWriter;
 import com.vividsolutions.jts.io.WKTReader;
 
 import io.netty.buffer.ByteBuf;
-
-import java.io.IOException;
 
 public class Geometrys extends SimpleProcProvider {
 
@@ -156,7 +157,7 @@ public class Geometrys extends SimpleProcProvider {
         return wr.read(bytes);
       }
       catch (ParseException e) {
-       throw new IllegalArgumentException("Failed to read WKB", e);
+        throw new IllegalArgumentException("Failed to read WKB", e);
       }
     }
   }

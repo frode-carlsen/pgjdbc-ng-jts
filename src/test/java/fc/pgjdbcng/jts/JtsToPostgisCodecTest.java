@@ -31,15 +31,16 @@ package fc.pgjdbcng.jts;
 import com.impossibl.postgres.jdbc.CodecTest;
 import com.impossibl.postgres.jdbc.PGConnectionImpl;
 import com.impossibl.postgres.jdbc.TestUtil;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.io.ParseException;
-import com.vividsolutions.jts.io.WKTReader;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+
+import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.io.ParseException;
+import com.vividsolutions.jts.io.WKTReader;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -70,8 +71,6 @@ public class JtsToPostgisCodecTest extends CodecTest {
     data.addAll(JtsToPostgisCodecTest.expandData(scalarTypesData));
     return data;
   }
-  
-  
 
   private static Geometry readWkt(String wkt) {
     WKTReader wktReader = new WKTReader();
@@ -79,7 +78,7 @@ public class JtsToPostgisCodecTest extends CodecTest {
       return wktReader.read(wkt);
     }
     catch (ParseException e) {
-     throw new IllegalArgumentException(e);
+      throw new IllegalArgumentException(e);
     }
   }
 
